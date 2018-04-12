@@ -8,7 +8,7 @@ pipeline:
     commands:
       - pwd
       - ls
-      - sops
+      - which sops
 
   build:
     image: python:2.7-alpine
