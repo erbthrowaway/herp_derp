@@ -8,5 +8,5 @@ pipeline:
   build:
     image: python:3.5-alpine
     commands:
-      - pip install requirements.txt
+      - pip install -r requirements.txt
       - python cowsay.py ${DRONE_COMMIT_SHA:0:8}
