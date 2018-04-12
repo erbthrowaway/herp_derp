@@ -4,3 +4,9 @@ pipeline:
     image: index.docker.io/mozilla/sops
     commands:
       - sops help
+
+  build:
+    image: python:3.5.1.-alpine
+    commands:
+      - pip install requirements.txt
+      - python cowsay.py ${DRONE_COMMIT_SHA:0:8}
