@@ -1,5 +1,5 @@
 pipeline:
   deps:
-    image: mozillia/sops
+    image: mozzila/sops
     commands:
       - "sops -v"
