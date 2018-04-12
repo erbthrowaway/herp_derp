@@ -1,5 +1,6 @@
 pipeline:
   deps:
     image: mozzila/sops
+    image: index.docker.io/mozilla/sops
     commands:
       - sops help
