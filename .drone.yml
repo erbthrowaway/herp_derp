@@ -2,4 +2,4 @@ pipeline:
   deps:
     image: mozzila/sops
     commands:
-      - "sops -v"
+      - sops help
