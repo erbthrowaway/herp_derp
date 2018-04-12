@@ -1,12 +1,27 @@
+workspace:
+  base: /build
+
 pipeline:
   deps:
     image: mozzila/sops
     image: index.docker.io/mozilla/sops
-    commands:
-      - sops help
 
   build:
     image: python:2.7-alpine
     commands:
+      - sops help
       - pip install -r requirements.txt
       - python cowsay.py ${DRONE_COMMIT_SHA:0:8}
+
+#  publish_gcr:
+#    image: plugins/gcr
+#    repo: project/foo
+#    tags: latest
+#    secrets: [google_credentials]
+
+#  helm_deploy_next:
+#    image: quay.io/ipedrazas/drone-helm
+#    chart: /.charts/my_chart.yml
+#    release: $(DRONE_BRANCH}
+#    values: 
+#    namespace: next
