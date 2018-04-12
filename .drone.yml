@@ -5,6 +5,9 @@ pipeline:
   deps:
     image: mozzila/sops
     image: index.docker.io/mozilla/sops
+    commands:
+      - pwd
+      - ls
 
   build:
     image: python:2.7-alpine
